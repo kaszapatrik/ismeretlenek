@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="hu">
+    <head>
+        <meta charset="UTF-8" />
+        <title>ismeretlenek.hu</title>
+        <meta name="viewport" content="width=device-width,minimum-scale=1.0,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+        <meta name="description" content="Ismerkedj ismeretlenekkel, hogy végül ismerősökké váljanak!" />
+        <link rel="shortcut icon" type="image/png" href="favicon.png" />
+        <link href="https://fonts.googleapis.com/css?family=Nunito&amp;subset=latin-ext" rel="stylesheet" />
+        <link style="text/css" href="default.css" rel="stylesheet" />
+        <script src="https://code.jquery.com/jquery-3.4.0.min.js" crossorigin="anonymous"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="app.js"></script>
+    </head>
+    <body>
+        <div class="form-container">
+            <h1>ismeretlenek<span class="hidden-title">.hu</span></h1>
+            
+            <div class="gray-area">
+                <div data-type="select" class="select gender">
+                    <div data-value="man">Fiú</div>
+                    <div data-value="woman">Lány</div>
+                </div>
+                vagyok, és 
+                <div data-type="select" data-default-value="anyone" class="select other-gender">
+                    <div data-value="man">Fiúval</div>
+                    <div data-value="woman">Lánnyal</div>
+                    <div data-value="anyone">Mindegy kivel</div>
+                </div>
+                <div>
+                    <div class="chat-button">Szeretnék beszélgetni</div>
+                </div>
+            </div>
+            
+            <table class="main-table">
+                <tr>
+                    <th>Mi is az Ismeretlenek?</th>
+                    <th>Statisztikák</th>
+                </tr>
+                <tr>
+                    <td>
+                        Az ismeretlenek.hu egy olyan online chat, ahol egy véletlenszerűen választott partnerekkel beszélgethetsz.
+                        A kezdéshez válaszd ki a nemed és a partnered nemét (kattints rá a szövegre, aminek a jobb oldalán ▾ van)
+                        majd kattints a Szeretnék beszélgetni gombra!
+                    </td>
+                    <td>
+                        <ul class="stat">
+                            <li>
+                                Összesen: <span class="users">0</span>
+                            </li>
+                            <li>
+                                Ebből fiú: <span class="man">0</span>
+                            </li>
+                            <li>
+                                Ebből lány: <span class="woman">0</span>
+                            </li>
+                            <li>
+                                Fiúval szeretne beszélni: <span class="wants-man">0</span>
+                            </li>
+                            <li>
+                                Lánnyal szeretne beszélni: <span class="wants-woman">0</span>
+                            </li>
+                            <li>
+                                Mindegy, kivel beszél: <span class="wants-anyone">0</span>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="chat-container">
+            <div class="chat-form-container">
+                <div class="messages"></div>
+                
+                <textarea class="message-box" maxlength="200"></textarea>
+                <input type="button" class="send" value="Küldés" />
+            </div>
+            
+            <div class="close">Beszélgetés vége</div>
+        </div>
+        
+        <div class="fade"></div>
+    </body>
+</html>
